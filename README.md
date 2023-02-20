@@ -38,4 +38,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Docs
-- https://dev.to/rhammy/path-aliases-in-nextjs-2fnc
+- Path Aliases (@): https://dev.to/rhammy/path-aliases-in-nextjs-2fnc
+- MongoDB Set Up: https://devdojo.com/amp/usmanwrites/how-to-use-mongoose-with-nextjs-for-mongodb
+- WebSockets: https://blog.logrocket.com/implementing-websocket-communication-next-js/

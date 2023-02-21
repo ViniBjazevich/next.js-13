@@ -11,10 +11,12 @@ export default async function handler(
   try {
     switch (req.method) {
       case "POST":
+        const { leaderId, followerId } = req.body;
+        
         const follow = await prisma.follow.create({
           data: {
-            leaderId: "cledzi70500009kyjw78oha37",
-            followerId: "cledzrdhs00029kyjuv72vo4q",
+            leaderId,
+            followerId,
           },
           include: {
             leader: true,
@@ -28,8 +30,9 @@ export default async function handler(
         const allFollows = await prisma.follow.findMany();
 
         res.status(200).json(allFollows);
-      default:
         break;
+      default:
+        res.status(400).json("Bad Request");
     }
   } catch (error) {
     console.error(error);

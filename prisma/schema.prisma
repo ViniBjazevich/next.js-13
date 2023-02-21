@@ -32,7 +32,7 @@ model Follow {
 
 model Post {
   id       Int    @id @default(autoincrement())
-  title    String
+  content    String
   authorId String
   author   User   @relation("author", fields: [authorId], references: [id])
   likedBy  User[]

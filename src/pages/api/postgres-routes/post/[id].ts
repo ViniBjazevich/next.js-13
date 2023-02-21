@@ -8,13 +8,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
+  const { id } = req.query;
+
   try {
     switch (req.method) {
-      case "POST":
-        const post = await prisma.post.create({
-          data: {
-            title: "My first post!",
-            authorId: "cledzrdhs00029kyjuv72vo4q",
+      case "GET":
+        if (typeof id !== "string") {
+          res.status(400).json("Invalid Request");
+          break;
+        }
+        const post = await prisma.post.findUnique({
+          where: {
+            id: parseInt(id),
           },
           include: {
             likedBy: true,
@@ -24,28 +29,29 @@ export default async function handler(
 
         res.status(200).json(post);
         break;
-      case "GET":
-        const allPost = await prisma.post.findMany({
-          include: {
-            likedBy: true,
-            author: true,
-          },
-        });
-
-        res.status(200).json(allPost);
-        break;
 
       case "PUT":
+        const usedId = req.body;
+
+        if (typeof id !== "string") {
+          res.status(400).json("Invalid Request");
+          break;
+        }
+
         const updatedPost = await prisma.post.update({
           where: {
-            id: 1,
+            id: parseInt(id),
           },
           data: {
             likedBy: {
               connect: {
-                id: "cledzi70500009kyjw78oha37",
+                id: usedId,
               },
             },
+          },
+          include: {
+            likedBy: true,
+            author: true,
           },
         });
 

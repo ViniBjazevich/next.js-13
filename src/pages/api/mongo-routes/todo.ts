@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { connectToDatabase, closeDatabaseConnection } from "@/database/mongo";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { TodosModel } from "../../database/mongo/schemas/todo";
+import { TodosModel } from "../../../database/mongo/schemas/todo";
 
 export default async function handler(
   req: NextApiRequest,

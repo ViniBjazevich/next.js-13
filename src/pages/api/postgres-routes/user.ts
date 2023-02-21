@@ -11,11 +11,12 @@ export default async function handler(
   try {
     switch (req.method) {
       case "POST":
+        const { handle, username, email } = req.body;
         const user = await prisma.user.create({
           data: {
-            handle: "645Grader",
-            username: "Reza Can't Code",
-            email: "reza@gmail.com",
+            handle,
+            username,
+            email,
           },
           include: {
             followers: true,
@@ -29,9 +30,20 @@ export default async function handler(
         break;
       case "GET":
         const users = await prisma.user.findMany({
-          include: {
-            followers: true,
-            following: true,
+          select: {
+            handle: true,
+            username: true,
+            email: true,
+            followers: {
+              select: {
+                follower: true,
+              },
+            },
+            following: {
+              select: {
+                leader: true,
+              },
+            },
             posts: true,
             likes: true,
           },

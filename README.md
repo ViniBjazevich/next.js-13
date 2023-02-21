@@ -64,5 +64,6 @@ hostname (endpoint), port (5432)
 - Path Aliases (@): https://dev.to/rhammy/path-aliases-in-nextjs-2fnc
 - MongoDB Set Up: https://devdojo.com/amp/usmanwrites/how-to-use-mongoose-with-nextjs-for-mongodb
 - Prisma: https://www.prisma.io/docs/getting-started/quickstart
+- Prisma Social Media Schema Example: https://stackoverflow.com/questions/72330381/prisma-not-liked-posts-from-followed-users
 - WebSockets: https://blog.logrocket.com/implementing-websocket-communication-next-js/
 

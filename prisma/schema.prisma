@@ -11,17 +11,29 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
+  id        String    @id @default(cuid())
+  handle    String    @unique
+  email     String    @unique
+  username  String
+  followers Follow[] @relation("follower")
+  following Follow[] @relation("following")
+  posts     Post[]    @relation("author")
+  likes     Post[]
+}
+
+model Follow {
+  follower    User   @relation("following", fields: [followerId], references: [id])
+  followerId  String
+  leader   User   @relation("follower", fields: [leaderId], references: [id])
+  leaderId String
+
+  @@id([followerId, leaderId])
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId  Int
+  id       Int    @id @default(autoincrement())
+  title    String
+  authorId String
+  author   User   @relation("author", fields: [authorId], references: [id])
+  likedBy  User[]
 }

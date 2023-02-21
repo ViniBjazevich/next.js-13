@@ -61,6 +61,7 @@ hostname (endpoint), port (5432)
 
 
 ## Docs
+- Dynamic Routing: https://nextjs.org/docs/routing/dynamic-routes
 - Path Aliases (@): https://dev.to/rhammy/path-aliases-in-nextjs-2fnc
 - MongoDB Set Up: https://devdojo.com/amp/usmanwrites/how-to-use-mongoose-with-nextjs-for-mongodb
 - Prisma: https://www.prisma.io/docs/getting-started/quickstart

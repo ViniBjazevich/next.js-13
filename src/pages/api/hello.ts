@@ -1,24 +1,32 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { connectToDatabase, closeDatabaseConnection } from "@/database";
-// import { connectToDatabase } from "../../database/index";
+import { connectToDatabase, closeDatabaseConnection } from "@/database/mongo";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { TodosModel } from "../../database/schemas/todo";
-
-// type Data = {
-//   name: string;
-// };
+import { TodosModel } from "../../database/mongo/schemas/todo";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<String>
+  res: NextApiResponse<any>
 ) {
-  console.log("Hit endpoint");
+  console.log("start");
   await connectToDatabase();
-  console.log("created connection");
-  const todoName = "Clean dishes";
-  const todo = new TodosModel({ name: todoName });
-  await todo.save();
-  closeDatabaseConnection();
+  console.log("connected");
 
-  res.status(200).json(`${todoName} successfully added to database`);
+  switch (req.method) {
+    case "POST":
+      const todoName = "Clean dishes";
+      const todo = new TodosModel({ name: todoName });
+      await todo.save();
+
+      res.status(200).json(`${todoName} successfully added to database`);
+      break;
+    case "GET":
+      const allTodos = await TodosModel.find();
+
+      res.status(200).json(allTodos);
+    default:
+      break;
+  }
+
+  // closeDatabaseConnection();
+  console.log("did I run?");
 }

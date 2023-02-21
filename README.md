@@ -37,7 +37,32 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Connect to RDS database
+
+1) Create RDS Instance
+- Use postgres free tier
+- Give it a database name
+- Allow public access
+
+2) After its created allow all inbound traffic
+
+3) Create connection string with the following format:
+postgresql://username:password@hostname:port/databasename
+
+If you have AWS create the password you can only see it once so make sure you copy it somewhere.
+
+Under `Configuration` tab you can find:
+username, database name
+
+Under `Connectivity & security` tab you can find:
+hostname (endpoint), port (5432)
+
+
+
+
 ## Docs
 - Path Aliases (@): https://dev.to/rhammy/path-aliases-in-nextjs-2fnc
 - MongoDB Set Up: https://devdojo.com/amp/usmanwrites/how-to-use-mongoose-with-nextjs-for-mongodb
+- Prisma: https://www.prisma.io/docs/getting-started/quickstart
 - WebSockets: https://blog.logrocket.com/implementing-websocket-communication-next-js/
+

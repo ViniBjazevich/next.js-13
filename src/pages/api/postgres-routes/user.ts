@@ -31,9 +31,10 @@ export default async function handler(
       case "GET":
         const users = await prisma.user.findMany({
           select: {
+            id: true,
             handle: true,
-            username: true,
             email: true,
+            username: true,
             followers: {
               select: {
                 follower: true,
@@ -46,6 +47,7 @@ export default async function handler(
             },
             posts: true,
             likes: true,
+            chatRooms: true,
           },
         });
 

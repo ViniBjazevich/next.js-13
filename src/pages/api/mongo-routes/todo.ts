@@ -27,6 +27,5 @@ export default async function handler(
       break;
   }
 
-  // closeDatabaseConnection();
-  console.log("did I run?");
+  closeDatabaseConnection();
 }

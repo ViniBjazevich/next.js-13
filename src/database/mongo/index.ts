@@ -1,13 +1,10 @@
 import { connect, connection, ConnectOptions } from "mongoose";
 
-const connectionString: string =
-  process.env.NEXT_PUBLIC_MONGO || "mongodb://localhost/mydatabase";
+if (!process.env.NEXT_PUBLIC_MONGO) {
+  throw new Error("Missing environment variable.");
+}
 
-// I dont think these are needed since they aren't apart of ConnectOptions
-// const options: any = {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// };
+const connectionString: string = process.env.NEXT_PUBLIC_MONGO;
 
 export async function connectToDatabase() {
   try {

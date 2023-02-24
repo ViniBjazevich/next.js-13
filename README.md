@@ -33,7 +33,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Give it a database name
 - Allow public access
 
-2) After its created allow all inbound traffic
+2) After its created allow all inbound traffic (under security groups):
+<img width="1205" alt="image" src="https://user-images.githubusercontent.com/49013231/221254553-02d2daab-78fe-4650-a3e7-d40543c9dea5.png">
+
 
 3) Create connection string with the following format:
 postgresql://username:password@hostname:port/databasename

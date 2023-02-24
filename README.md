@@ -20,6 +20,7 @@ DB Hosting (all have free version):
 - https://aws.amazon.com/rds/
 
 </br>
+
 After removing unneeded dependencies run: `npm install`
 
 To start project run: `npm run dev`

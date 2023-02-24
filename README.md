@@ -13,6 +13,13 @@ MongoDB               | Mongoose      | mongoose
 PostgreSQL or MongoDB | Prisma        | prisma
 
 </br>
+DB Hosting (all have free version):
+
+- https://www.elephantsql.com/
+- https://www.mongodb.com/atlas/database
+- https://aws.amazon.com/rds/
+
+</br>
 After removing unneeded dependencies run: `npm install`
 
 To start project run: `npm run dev`

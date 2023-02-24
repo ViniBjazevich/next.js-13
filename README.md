@@ -1,7 +1,7 @@
 ## Next.js-13:
 ## The purpose of this repo is to give you a good starting point when creating a new project.
 </br>
-This project already has database connections and CRUD operations using their corresponding ORM's.
+This project already has database connections set up and CRUD operations created using their corresponding ORM's.
 </br></br>
 
 Decide on which technologies you want to use and remove the dependencies that you don't need.

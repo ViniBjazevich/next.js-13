@@ -51,7 +51,6 @@ hostname (endpoint), port (5432)
 
 </br>
 
-
 ## Docs
 - Dynamic Routing: https://nextjs.org/docs/routing/dynamic-routes
 - Path Aliases (@): https://dev.to/rhammy/path-aliases-in-nextjs-2fnc
@@ -62,3 +61,5 @@ hostname (endpoint), port (5432)
 - Prisma Social Media Schema Example: https://stackoverflow.com/questions/72330381/prisma-not-liked-posts-from-followed-users
 - WebSockets: https://blog.logrocket.com/implementing-websocket-communication-next-js/
 
+
+To push prisma schema: `npx prisma db push`

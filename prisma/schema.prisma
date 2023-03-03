@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("NEXT_PUBLIC_RDS_POSTGRES")
+  url      = env("NEXT_PUBLIC_ELEPHANTSQL_POSTGRES")
 }
 
 model User {

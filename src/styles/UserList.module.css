@@ -1,0 +1,36 @@
+.userListContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.header {
+  margin-top: 1rem;
+}
+
+.userDetail {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.userAccordion {
+  margin-top: 1rem;
+}
+
+.userCardHeader {
+  display: flex;
+  gap: 1rem;
+}
+
+.username {
+  color: black;
+}
+
+.handle {
+  color: grey;
+}
+
+.loadingSpinner {
+  margin: 4rem;
+}

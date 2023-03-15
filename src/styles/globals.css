@@ -85,11 +85,11 @@ body {
     rgb(var(--background-start-rgb)); */
 }
 
-@media (prefers-color-scheme: dark) {
-  /* html {
+/* @media (prefers-color-scheme: dark) {
+  html {
     color-scheme: dark;
-  } */
-}
+  }
+} */
 
 * {
   box-sizing: border-box;

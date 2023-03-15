@@ -1,0 +1,12 @@
+.navbar {
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

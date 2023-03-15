@@ -10,7 +10,7 @@ const { Title } = Typography;
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const getUserData = async () => {
     try {
@@ -28,16 +28,16 @@ const UserList = () => {
     getUserData();
   }, []);
 
+  if (loading) {
+    return (
+      <div className={styles.loadingSpinner}>
+        <Spin size="large" />
+      </div>
+    );
+  }
+
   return (
     <>
-      {loading && (
-        <div className={styles.loadingSpinner}>
-          <Spin size="large" />
-        </div>
-      )}
-      {!loading && <Title level={2} className={styles.header}>
-        Users:
-      </Title>}
       <div className={styles.userListContainer}>
         {users.map((user: User) => (
           <Card
